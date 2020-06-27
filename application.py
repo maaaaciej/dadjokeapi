@@ -11,12 +11,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-   return  random.choice(jokes)
+   return  render_template("index.html", joke=random.choice(jokes))
+   
 
 #TODO I "/api"
-#opprett et api som sender et json-objekt med en random joke fra databasen
-
+#Lag en template som forklarer hvordan API'en fungerer, og CTA med å følge meg på github osv 
 
 @app.route("/api")
 def api():
-   return "api"
+   return " Hvordan api fungerer"
+
+
+@app.route("/api/joke") 
+def joke():
+      return  jsonify(random.choice(jokes))
