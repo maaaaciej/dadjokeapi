@@ -12,5 +12,3 @@ import os
 f=open("jokes.txt")
 jokes = f.readlines()
 
-for joke in jokes:
-    print(joke)
