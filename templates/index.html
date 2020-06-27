@@ -13,10 +13,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1 onclick="copy">{{joke}}</h1>
+        <h1>{{joke}}</h1>
         <div class="buttons">
             <a href="" class="button1">New Joke</a>
-            <a href="" class="button1">API</a>
+            <a href="{{url_for('api')}}" class="button1">API</a>
         </div>
         
         <div>

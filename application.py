@@ -19,7 +19,7 @@ def index():
 
 @app.route("/api")
 def api():
-   return " Hvordan api fungerer"
+   return render_template("api.html")
 
 
 @app.route("/api/joke") 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dad Joke Api</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles/index.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="{{url_for('index')}}" id="navlink">The Dad Joke Api </a>
+    </nav>
+    <div class="docs">
+      <h2>How to use the API</h2>
+      <p>
+        The API url down below returns a random dad joke on each request, in
+        JSON format.
+      </p>
+      <p>
+        To add a new joke to the list just submit a pull request to the
+        jokes.txt file in the
+        <a href="https://github.com/maaaaciej/dadjokeapi">GitHub repo</a>. The
+        database.py file adds the new lines in the txt file to the list of
+        possible jokes.
+      </p>
+      <div class="clipboard">
+        <input type="text" value="{{url_for('joke')}}" id="api" /><a
+          class="button1"
+          onclick="copy()"
+          >Copy To ClipBoard</a
+        >
+      </div>
+    </div>
+
+    <div>
+      <footer>
+        Made by Maciej Ostrowski. Make sure to check out my
+        <a href="https://github.com/maaaaciej">GitHub</a>!
+      </footer>
+    </div>
+    <script>
+      function copy() {
+        let url = document.getElementById("api");
+
+        url.select();
+        url.setSelectionRange(0, 99999);
+
+        document.execCommand("copy");
+
+        url.setAttribute("value", "Copied to clipboard!");
+      }
+    </script>
+  </body>
+</html>
