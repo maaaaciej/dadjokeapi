@@ -1,20 +1,17 @@
 from flask import Flask, render_template, jsonify, request
 import random
-
-#TODO 
-#Sette opp database
+from database import jokes
 
 app = Flask(__name__)
 
-jokes =['Today, my son asked "Can I have a book mark?" and I burst into tears. 11 years old and he still doesn\'t know my name is Brian!', '']
 
+#TODO 
+#Lag en template som viser en random quote, med en knapp som refresher for å gi deg en ny en
 
-#TODO I "/"
-#return et random element fra databasen
 
 @app.route("/")
 def index():
-   return  jokes[0]
+   return  random.choice(jokes)
 
 #TODO I "/api"
 #opprett et api som sender et json-objekt med en random joke fra databasen
